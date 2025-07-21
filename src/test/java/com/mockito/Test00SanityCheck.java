@@ -24,7 +24,7 @@ class Test00SanityCheck {
 	}
 
 	@Test
-	void should_CalculateCorrectPrice_When_CorrectInput() {
+	void testCalculateCorrectPrice() {
 		// should pass
 		RentingRequest rentingRequest = new RentingRequest("1", LocalDate.of(2025, Month.JANUARY, 1),
 				LocalDate.of(2025, Month.JANUARY, 8), 2, false);
