@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: com.mockito.Test08Spies
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.004 s <<< FAILURE! -- in com.mockito.Test08Spies
+com.mockito.Test08Spies.should_MakeBooking_When_InputOK -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.IllegalStateException: No available book found for the request
+	at com.mockito.RentingService.makeBooking(RentingService.java:46)
+	at com.mockito.Test08Spies.should_MakeBooking_When_InputOK(Test08Spies.java:29)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+

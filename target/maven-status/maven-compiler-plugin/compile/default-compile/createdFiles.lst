@@ -1,0 +1,9 @@
+com/mockito/MailSender.class
+com/mockito/RentingService.class
+com/mockito/BookService.class
+com/mockito/BusinessException.class
+com/mockito/RentingRequest.class
+com/mockito/Book.class
+com/mockito/CurrencyConverter.class
+com/mockito/PaymentService.class
+com/mockito/RentingDAO.class

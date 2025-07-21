@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: com.mockito.Test13StrictStubbing
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.005 s <<< FAILURE! -- in com.mockito.Test13StrictStubbing
+com.mockito.Test13StrictStubbing.should_InvokePayment_When_Prepaid -- Time elapsed: 0.004 s <<< ERROR!
+java.lang.IllegalStateException: No available book found for the request
+	at com.mockito.RentingService.makeBooking(RentingService.java:46)
+	at com.mockito.Test13StrictStubbing.should_InvokePayment_When_Prepaid(Test13StrictStubbing.java:33)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+

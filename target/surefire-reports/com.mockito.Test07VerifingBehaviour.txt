@@ -1,0 +1,20 @@
+-------------------------------------------------------------------------------
+Test set: com.mockito.Test07VerifingBehaviour
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.005 s <<< FAILURE! -- in com.mockito.Test07VerifingBehaviour
+com.mockito.Test07VerifingBehaviour.should_InvokePayment_When_PrePaid -- Time elapsed: 0.002 s <<< ERROR!
+java.lang.IllegalStateException: No available book found for the request
+	at com.mockito.RentingService.makeBooking(RentingService.java:46)
+	at com.mockito.Test07VerifingBehaviour.should_InvokePayment_When_PrePaid(Test07VerifingBehaviour.java:30)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.mockito.Test07VerifingBehaviour.should_NotInvokePayment_When_NotPrePaid -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.IllegalStateException: No available book found for the request
+	at com.mockito.RentingService.makeBooking(RentingService.java:46)
+	at com.mockito.Test07VerifingBehaviour.should_NotInvokePayment_When_NotPrePaid(Test07VerifingBehaviour.java:40)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+

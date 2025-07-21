@@ -1,0 +1,20 @@
+-------------------------------------------------------------------------------
+Test set: com.mockito.Test11Annotations
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.008 s <<< FAILURE! -- in com.mockito.Test11Annotations
+com.mockito.Test11Annotations.should_PayCorrectPrice_When_MultipleCalls -- Time elapsed: 0.003 s <<< ERROR!
+java.lang.IllegalStateException: No available book found for the request
+	at com.mockito.RentingService.makeBooking(RentingService.java:46)
+	at com.mockito.Test11Annotations.should_PayCorrectPrice_When_MultipleCalls(Test11Annotations.java:46)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.mockito.Test11Annotations.should_PayCorrectPrice_When_InputOK -- Time elapsed: 0.003 s <<< ERROR!
+java.lang.IllegalStateException: No available book found for the request
+	at com.mockito.RentingService.makeBooking(RentingService.java:46)
+	at com.mockito.Test11Annotations.should_PayCorrectPrice_When_InputOK(Test11Annotations.java:33)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+

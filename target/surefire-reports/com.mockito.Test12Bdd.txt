@@ -1,0 +1,25 @@
+-------------------------------------------------------------------------------
+Test set: com.mockito.Test12Bdd
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 1, Errors: 1, Skipped: 0, Time elapsed: 0.014 s <<< FAILURE! -- in com.mockito.Test12Bdd
+com.mockito.Test12Bdd.should_CountAvailableBooks_When_OneBookAvailable -- Time elapsed: 0.008 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <2> but was: <1>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
+	at com.mockito.Test12Bdd.should_CountAvailableBooks_When_OneBookAvailable(Test12Bdd.java:34)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.mockito.Test12Bdd.should_InvokePayment_When_Prepaid -- Time elapsed: 0.006 s <<< ERROR!
+java.lang.IllegalStateException: No available book found for the request
+	at com.mockito.RentingService.makeBooking(RentingService.java:46)
+	at com.mockito.Test12Bdd.should_InvokePayment_When_Prepaid(Test12Bdd.java:41)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+

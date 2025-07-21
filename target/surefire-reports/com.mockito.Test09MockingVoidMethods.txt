@@ -1,0 +1,28 @@
+-------------------------------------------------------------------------------
+Test set: com.mockito.Test09MockingVoidMethods
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 1, Errors: 1, Skipped: 0, Time elapsed: 0.008 s <<< FAILURE! -- in com.mockito.Test09MockingVoidMethods
+com.mockito.Test09MockingVoidMethods.should_Not_ThrowException_When_MailNotReady -- Time elapsed: 0.002 s <<< ERROR!
+java.lang.IllegalStateException: No available book found for the request
+	at com.mockito.RentingService.makeBooking(RentingService.java:46)
+	at com.mockito.Test09MockingVoidMethods.should_Not_ThrowException_When_MailNotReady(Test09MockingVoidMethods.java:41)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.mockito.Test09MockingVoidMethods.should_ThrowException_When_NoRoomAvailable -- Time elapsed: 0.003 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown, expected: <com.mockito.BusinessException> but was: <java.lang.IllegalStateException>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:67)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3128)
+	at com.mockito.Test09MockingVoidMethods.should_ThrowException_When_NoRoomAvailable(Test09MockingVoidMethods.java:33)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+Caused by: java.lang.IllegalStateException: No available book found for the request
+	at com.mockito.RentingService.makeBooking(RentingService.java:46)
+	at com.mockito.Test09MockingVoidMethods.lambda$should_ThrowException_When_NoRoomAvailable$0(Test09MockingVoidMethods.java:32)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:53)
+	... 6 more
+
