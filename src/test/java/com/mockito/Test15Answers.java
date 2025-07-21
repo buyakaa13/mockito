@@ -7,6 +7,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.time.*;
 
+import static com.mockito.RentingService.BASE_PRICE_USD;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.anyDouble;
 import static org.mockito.BDDMockito.mockStatic;
@@ -27,16 +28,36 @@ public class Test15Answers {
     private ArgumentCaptor<Double> doubleCaptor;
 
     @Test
-    void should_CalculateCorrectPrice(){
-        try(MockedStatic<CurrencyConverter> mockedCurrencyConverter = mockStatic(CurrencyConverter.class)){
-            RentingRequest rentingRequest = new RentingRequest("1", LocalDate.of(2025, Month.JANUARY, 1),
-                    LocalDate.of(2025, Month.JANUARY, 5), 2, false);
-            double expected = 400.0 * 0.8;
-            mockedCurrencyConverter.when(() -> CurrencyConverter.toEuro(anyDouble()))
-                    .thenAnswer(inv->(double) inv.getArgument(0)*0.8);
-            double actual = rentingService.calculatePrice(rentingRequest);
-            assertEquals(expected, actual);
-        }
-
+    void should_CalculateCorrectPrice_When_ValidRequest() {
+        RentingRequest rentingRequest = new RentingRequest(
+                "1",
+                LocalDate.of(2025, Month.JANUARY, 1),
+                LocalDate.of(2025, Month.JANUARY, 5),
+                2,
+                false
+        );
+        double expected = BASE_PRICE_USD * 2 * 4; // BASE_PRICE_USD * quantity * days
+        double actual = rentingService.calculatePrice(rentingRequest);
+        assertEquals(expected, actual, 0.001);
     }
+
+    @Test
+    void should_CalculateCorrectPriceInEuro_When_ValidRequest() {
+        try (MockedStatic<CurrencyConverter> mockedCurrencyConverter = Mockito.mockStatic(CurrencyConverter.class)) {
+            RentingRequest rentingRequest = new RentingRequest(
+                    "1",
+                    LocalDate.of(2025, Month.JANUARY, 1),
+                    LocalDate.of(2025, Month.JANUARY, 5),
+                    2,
+                    false
+            );
+            double usdPrice = BASE_PRICE_USD * 2 * 4; // BASE_PRICE_USD * quantity * days
+            double expected = usdPrice * 0.8; // Convert to EUR
+            mockedCurrencyConverter.when(() -> CurrencyConverter.toEuro(usdPrice))
+                    .thenReturn(expected);
+            double actual = rentingService.calculatePriceEuro(rentingRequest);
+            assertEquals(expected, actual, 0.001);
+        }
+    }
+
 }
