@@ -10,7 +10,7 @@ public class RentingService {
 	private final RentingDAO rentingDAO;
 	private final MailSender mailSender;
 
-	public static final double BASE_PRICE_USD = 50.0; // Price per book per day
+	public static final double BASE_PRICE_USD = 5.0; // Price per book per day
 
 	public RentingService(PaymentService paymentService, BookService bookService, RentingDAO rentingDAO, MailSender mailSender) {
 		this.paymentService = Objects.requireNonNull(paymentService, "paymentService must not be null");
